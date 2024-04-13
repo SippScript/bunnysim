@@ -104,10 +104,14 @@ def create_results_file():
 
     return file_path
 
+def define_rules():
+    print("Phases: \n 1. When prompted, enter the starting number of Rabbits.\n 2. The program will display the mix of alleles your rabbits have\n 3. Everytime your hit enter, 3 copies of the Rabbits will be made from the previous generation. then they will all have a coin flipped to see if they perish.\n 4. The program repeats from phase 2 at this point.\n 5. A \".csv\" file will be created in your \"Downloads\" folder. The results of your experiments will be saved there.\n The naming schema will be the addition of a random number from 1-1000 appeneded a file named \"bunny_simulation...\".")
+
 
 
 # Program entry point
 def main():
+    define_rules()
     get_starting_num_rabbits = int(input("Enter starting number of Rabbits: "))
     population = generate_starting_rabbit_count(get_starting_num_rabbits)
     
