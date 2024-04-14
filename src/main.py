@@ -6,7 +6,7 @@ import platform
 """
 Programer Notes
 - created in a way to enable a outside user to add more alleles if they wanted.
-- clearly labled survival and mutation chances to further customize simulation environment
+- clearly labeled survival and mutation chances to further customize simulation environment
 - added support for 3 operating systems. this does not mean one ".exe" file will work on all 3. the program would need to be 
 """
 
@@ -63,14 +63,14 @@ def simulate_generation(population):
             surviving_rabbits.append(Rabbit(new_rabbit_allele))
             has_Ww = True
 
-    # Reproduce and create offspring with a limit, this was implimented as the population seemed to explode exponentially anytime it got bigger than 30
+    # Reproduce and create offspring with a limit, this was implemented as the population seemed to explode exponentially anytime it got bigger than 30
     offspring_limit = 50  # Limit can be adjusted here
     offspring = []
     for _ in range(min(len(surviving_rabbits) * 3, offspring_limit)):
         parent = random.choice(surviving_rabbits)
         # Introduce mutation with a small probability
         if random.random() < 0.07:  # chance of mutation
-            offspring_allele = random.choice(["WW", "Ww", "ww"]) # adds random alleles back into the population to increase percived randomness
+            offspring_allele = random.choice(["WW", "Ww", "ww"]) # adds random alleles back into the population to increase perceived randomness
         else:
             offspring_allele = random.choice([parent.allele, parent.allele])
         offspring.append(Rabbit(offspring_allele))
@@ -105,7 +105,7 @@ def create_results_file():
     return file_path
 
 def define_rules():
-    print("Phases: \n 1. When prompted, enter the starting number of Rabbits.\n 2. The program will display the mix of alleles your rabbits have\n 3. Everytime your hit enter, 3 copies of the Rabbits will be made from the previous generation. then they will all have a coin flipped to see if they perish.\n 4. The program repeats from phase 2 at this point.\n 5. A \".csv\" file will be created in your \"Downloads\" folder. The results of your experiments will be saved there.\n The naming schema will be the addition of a random number from 1-1000 appeneded a file named \"bunny_simulation...\".")
+    print("Phases: \n 1. When prompted, enter the starting number of Rabbits.\n 2. The program will display the mix of alleles your rabbits have\n 3. Everytime you hit enter, 3 copies of the Rabbits will be made from the previous generation. then they will all have a coin flipped to see if they perish.\n 4. The program repeats from phase 2 at this point.\n 5. A \".csv\" file will be created in your \"Downloads\" folder. The results of your experiments will be saved there.\n The naming schema will be the addition of a random number from 1-1000 appeneded a file named \"bunny_simulation...\".")
 
 
 
@@ -146,7 +146,10 @@ def main():
         user_input = input("Press Enter to continue or type 'exit' to stop: ")
         if user_input.lower() == "exit": # simulation ends if user exits program
             break
-    
+        
+        # artificial wait. thought it would be nice.
+        print("Randomly selecting Rabbits to die off...\n")
+        time.sleep(1)
         # debug area
         
             
