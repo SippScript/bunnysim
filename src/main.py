@@ -112,7 +112,14 @@ def define_rules():
 # Program entry point
 def main():
     define_rules()
-    get_starting_num_rabbits = int(input("Enter starting number of Rabbits: "))
+    # "try" blocks will test input for bad data. if someone types in a non number or decimal we will raise an exception and ask them to try again
+    # this will prevent the program from panicking and closing out
+    try: 
+        get_starting_num_rabbits = int(input("Enter starting number of Rabbits: "))
+    except:
+        print("Error: Value entered is not a number or is a decimal value. Try again")
+        get_starting_num_rabbits = int(input("Enter starting number of Rabbits: "))
+        
     population = generate_starting_rabbit_count(get_starting_num_rabbits)
     
     # main while loop program runs in
@@ -120,6 +127,8 @@ def main():
 
     results_file = create_results_file()
 
+
+    # here is where most of the program will run. The "while true" is a loop that continues the sim until you exit it
     while True:
         # presents starting rabbit count allele generation to user
         allele_counts = count_alleles(population)
