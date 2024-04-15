@@ -5,11 +5,13 @@ I aimed to make the code simple enough to mess with should an operator want more
 
 ---
 # Release 
-a copy of an executable for Windows, Mac, and Linux will all be availbe under release 1.0.0
+a copy of an executable for Windows, Mac, and Linux will all be availbe under release 1.0.0.
+
 If I get to adding onto the program, I will update the release as well!  
 
 ---
-# Build Instructions
+Build Instructions
+! Note ! These build instructions are made people people who know how to setup a project environment for Python
 1. Create a directory on your machine and `cd` into it:
     ```bash
     mkdir project_directory
@@ -20,40 +22,25 @@ If I get to adding onto the program, I will update the release as well!
     ```bash
     git clone https://github.com/SippScript/bunnysim.git
     ```
-
-3. Create a virtual environment for the project:
-    ```bash
-    python3 -m venv venv
-    ```
-
-4. Activate the virtual environment (commands may vary based on your operating system):
-    - For Unix/Linux/macOS:
-        ```bash
-        source venv/bin/activate
-        ```
-    - For Windows:
-        ```bash
-        .\venv\Scripts\activate
-        ```
-
-5. Install pyinstaller:
+        
+3. Install pyinstaller:
     ```bash
     pip install pyinstaller
     ```
 
-6. Navigate to the "src" directory:
+4. Navigate to the "src" directory:
     ```bash
-    cd bunnysim/src
+    cd project_directory/src
     ```
 
-7. Build the project using pyinstaller:
+5. Build the project using pyinstaller:
     ```bash
     pyinstaller main.py
     ```
 
-8. To create a single executable file, use:
+6. To create a single executable file, use:
     ```bash
     pyinstaller -F main.py
     ```
 
-9. The executable will be created in the "dist" directory.
+The executable will be created in the "dist" directory.
