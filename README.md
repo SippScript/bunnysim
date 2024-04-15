@@ -12,6 +12,8 @@ If I get to adding onto the program, I will update the release as well!
 ---
 Build Instructions
 ! Note ! These build instructions are made people people who know how to setup a project environment for Python
+
+and use a terminal.
 1. Create a directory on your machine and `cd` into it:
     ```bash
     mkdir project_directory
